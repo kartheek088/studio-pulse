@@ -160,6 +160,37 @@ export function ProductionProvider({ children }) {
     return user;
   }
 
+  function loginWithCredentials(email, password) {
+    if (!email || !password) {
+      throw new Error("Please enter both email and password.");
+    }
+    const cleanEmail = email.trim().toLowerCase();
+    const cleanPass = password.trim();
+
+    const user = Object.values(USERS).find(
+      (u) => u.email.toLowerCase() === cleanEmail || u.id.toLowerCase() === cleanEmail
+    );
+
+    if (!user) {
+      throw new Error(`No studio account registered for "${email}". Check demo accounts below.`);
+    }
+
+    const validPasswords = [
+      user.password,
+      `${user.id}2026`,
+      "pulse2026",
+      "password123",
+      "studio2026",
+      "admin123",
+    ];
+
+    if (!validPasswords.includes(cleanPass)) {
+      throw new Error(`Incorrect password for ${user.name}. Password is: ${user.password || `${user.id}2026`}`);
+    }
+
+    return login(user.id);
+  }
+
   function logout() {
     setCurrentUser(null);
     try {
@@ -1086,6 +1117,7 @@ export function ProductionProvider({ children }) {
     users: USERS,
     isLoggedIn: Boolean(currentUser),
     login,
+    loginWithCredentials,
     logout,
     switchUser,
     canEditShot,
