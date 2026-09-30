@@ -93,6 +93,45 @@ class Store {
     return act;
   }
 
+  createProject(data) {
+    const newProj = {
+      id: data.id || `proj_${Date.now()}`,
+      name: data.name?.trim() || "Untitled Production",
+      type: data.type || "Animation",
+      client: data.client?.trim() || "Independent",
+      deadline: data.deadline || new Date(Date.now() + 30 * 86400000).toISOString().split("T")[0],
+      status: data.status || "In Production",
+      health: data.health || "Healthy",
+      workflowId: data.workflowId || "connected",
+      architecture: data.architecture || (data.workflowId === "connected" ? "Connected Pipeline (Unreal + Blender + Kitsu)" : `${data.type || "Standard"} Pipeline`),
+      vcs: data.vcs || "Git + Git LFS",
+      reviewPlatform: data.reviewPlatform || "Kitsu",
+      progress: 0,
+      shotCount: data.shotCount || (data.initialShots ? data.initialShots.length : 0),
+      description: data.description || "",
+    };
+
+    this.state.projects = [newProj, ...this.state.projects];
+
+    if (data.initialShots && Array.isArray(data.initialShots)) {
+      this.state.shots = [...data.initialShots, ...this.state.shots];
+    }
+    if (data.initialTasks && Array.isArray(data.initialTasks)) {
+      this.state.tasks = [...data.initialTasks, ...this.state.tasks];
+    }
+
+    this.persist(this.state);
+    this.addActivity({
+      type: "project",
+      entityType: "project",
+      entity: newProj.name,
+      text: `Created new project "${newProj.name}"`,
+      detail: `Client: ${newProj.client} · Type: ${newProj.type}`,
+    });
+
+    return newProj;
+  }
+
   // --- Shots ---
   getShots() {
     return this.state.shots;

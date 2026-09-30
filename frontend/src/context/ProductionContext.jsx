@@ -415,6 +415,99 @@ export function ProductionProvider({ children }) {
     return d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
   }
 
+  // ── Project Actions ─────────────────────────────────────────────────
+  async function createProject(projectData) {
+    const newId = `p_${Date.now()}`;
+    const workflowId = projectData.workflowId || "connected";
+    const wf = state.workflows[workflowId] || WORKFLOWS[workflowId] || WORKFLOWS.connected;
+    const firstStageId = wf?.stages?.[0]?.id || "pre-production";
+
+    const newProject = {
+      id: newId,
+      name: projectData.name.trim(),
+      type: projectData.type || "Animation",
+      client: projectData.client?.trim() || "Independent",
+      deadline: projectData.deadline || new Date(Date.now() + 30 * 86400000).toISOString().split("T")[0],
+      status: "In Production",
+      health: "Healthy",
+      workflowId,
+      architecture: workflowId === "connected"
+        ? "Connected Pipeline (Unreal + Blender + Kitsu)"
+        : `${projectData.type || "Standard"} Pipeline`,
+      vcs: "Git + Git LFS",
+      reviewPlatform: "Kitsu",
+      progress: 0,
+      shotCount: Number(projectData.shotCount) || 3,
+      description: projectData.description || "",
+    };
+
+    // Generate starter shots so the project is immediately functional across all pages
+    const initialShots = [];
+    const initialTasks = [];
+    const shotTotal = Math.min(Math.max(Number(projectData.shotCount) || 3, 1), 12);
+    const artistsList = ["nv", "saswat", "maya", "rohan", "nishanth"];
+    const prefix = newProject.name.replace(/[^a-zA-Z0-9]/g, "").slice(0, 4).toUpperCase() || "SHOT";
+
+    for (let i = 1; i <= shotTotal; i++) {
+      const shotNum = String(i).padStart(2, "0");
+      const shotId = `${prefix}_${shotNum}`;
+      const artist = artistsList[(i - 1) % artistsList.length];
+
+      initialShots.push({
+        id: shotId,
+        name: `${newProject.name} — Shot ${shotNum}`,
+        projectId: newId,
+        stageId: firstStageId,
+        status: "In Progress",
+        priority: i === 1 ? "High" : "Medium",
+        dueDate: newProject.deadline,
+        artistId: artist,
+        dccTool: workflowId === "connected" ? (i % 2 === 0 ? "Blender" : "Unreal Engine") : "Blender",
+        progress: 0,
+        version: 1,
+        description: `Production shot sequence ${shotNum} for ${newProject.name}`,
+      });
+
+      initialTasks.push({
+        id: `task_${shotId}_init`,
+        shotId,
+        projectId: newId,
+        name: `${wf?.stages?.[0]?.name || "Pre-production"} Setup`,
+        stageId: firstStageId,
+        status: "In Progress",
+        artistId: artist,
+        priority: "Medium",
+        dueDate: newProject.deadline,
+        department: "Production",
+      });
+    }
+
+    setState((s) => ({
+      ...s,
+      projects: [newProject, ...s.projects],
+      shots: [...initialShots, ...s.shots],
+      tasks: [...initialTasks, ...s.tasks],
+    }));
+
+    addActivity({
+      type: "project",
+      entityType: "project",
+      entity: newProject.name,
+      text: `Created new project "${newProject.name}"`,
+      detail: `Client: ${newProject.client} · ${newProject.type} · ${shotTotal} initial shots`,
+    });
+
+    try {
+      if (api.createProject) {
+        await api.createProject({ ...newProject, initialShots, initialTasks });
+      }
+    } catch (err) {
+      console.warn("[API] createProject error fallback:", err.message);
+    }
+
+    return newProject;
+  }
+
   // ── Shot Actions ────────────────────────────────────────────────────
   function updateShotStatus(shotId, newStatus) {
     setState((s) => ({
@@ -969,6 +1062,7 @@ export function ProductionProvider({ children }) {
     setCurrentArtist,
     setCurrentProjectId,
 
+    createProject,
     updateShotStatus,
     moveShotToStage,
     completeCurrentTask,

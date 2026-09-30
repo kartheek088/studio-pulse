@@ -2,13 +2,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProduction } from "../context/ProductionContext";
 import { Badge } from "../components/common/Badge";
-import { Search, ArrowRight, FolderKanban, Film, Calendar, CheckCircle2, GitMerge, ExternalLink, User } from "lucide-react";
+import { NewProjectModal } from "../components/projects/NewProjectModal";
+import { Search, ArrowRight, FolderKanban, Film, Calendar, CheckCircle2, GitMerge, ExternalLink, User, Plus, FolderPlus } from "lucide-react";
 
 export function Projects() {
   const navigate = useNavigate();
-  const { projects, shots, getWorkflow, currentUser, currentArtist } = useProduction();
+  const { projects, shots, getWorkflow, currentUser, currentArtist, createProject } = useProduction();
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("All");
+  const [isNewProjectOpen, setIsNewProjectOpen] = useState(false);
+  const [toastMessage, setToastMessage] = useState(null);
+
+  async function handleCreateProject(projectData) {
+    const created = await createProject(projectData);
+    setToastMessage(`Project "${created.name}" created successfully!`);
+    setTimeout(() => setToastMessage(null), 3500);
+  }
 
   const statuses = ["All", "In Production", "At Risk", "Healthy", "Completed"];
 
@@ -26,12 +35,28 @@ export function Projects() {
 
   return (
     <div className="page projects-page">
+      {toastMessage && (
+        <div className="studio-toast" style={{ position: "fixed", bottom: "24px", right: "24px", zIndex: 3000, background: "#10b981", color: "#fff", padding: "12px 18px", borderRadius: "8px", fontWeight: 600, boxShadow: "0 10px 25px rgba(0,0,0,0.4)" }}>
+          {toastMessage}
+        </div>
+      )}
+
       <div className="page-header">
         <div className="page-header-main">
           <h1>Active Projects</h1>
           <p className="page-subtitle">
             Monitor client productions, stage velocity, milestones, and deliverable commitments.
           </p>
+        </div>
+        <div className="page-header-actions">
+          <button
+            type="button"
+            className="btn-primary"
+            onClick={() => setIsNewProjectOpen(true)}
+          >
+            <FolderPlus size={16} />
+            <span>New Project</span>
+          </button>
         </div>
       </div>
 
@@ -154,6 +179,12 @@ export function Projects() {
       {filtered.length === 0 && (
         <div className="empty-shots">No projects match the selected criteria.</div>
       )}
+
+      <NewProjectModal
+        isOpen={isNewProjectOpen}
+        onClose={() => setIsNewProjectOpen(false)}
+        onCreateProject={handleCreateProject}
+      />
     </div>
   );
 }

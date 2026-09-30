@@ -35,6 +35,14 @@ app.get("/api/projects/:id", (req, res) => {
   res.json(project);
 });
 
+app.post("/api/projects", (req, res) => {
+  if (!req.body?.name) {
+    return res.status(400).json({ error: "Project name is required" });
+  }
+  const created = store.createProject(req.body);
+  res.status(201).json(created);
+});
+
 // ── Shots ──────────────────────────────────────────────────────────────
 app.get("/api/shots", (req, res) => {
   let shots = store.getShots();

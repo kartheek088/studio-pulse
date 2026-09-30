@@ -41,6 +41,11 @@ export const api = {
   // Projects
   getProjects: () => request("/projects"),
   getProject: (id) => request(`/projects/${id}`),
+  createProject: (data) =>
+    request("/projects", {
+      method: "POST",
+      body: JSON.stringify(data),
+    }),
 
   // Shots
   getShots: (query = {}) => {
