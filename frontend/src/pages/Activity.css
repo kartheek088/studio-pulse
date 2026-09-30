@@ -1,0 +1,94 @@
+.activity-feed {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 20px 0;
+}
+
+.activity-group-title {
+  padding: 0 20px 10px;
+  color: var(--accent);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.activity-row {
+  display: flex;
+  align-items: flex-start;
+  padding: 12px 20px;
+  gap: 10px;
+  border-left: 2px solid var(--border-soft);
+}
+
+.activity-row:hover {
+  background: var(--bg-panel-alt);
+}
+
+.activity-row.type-review {
+  border-left-color: var(--warn);
+}
+
+.activity-row.type-task {
+  border-left-color: var(--info);
+}
+
+.activity-row.type-approval {
+  border-left-color: var(--ok);
+}
+
+.activity-row.type-block {
+  border-left-color: var(--danger);
+}
+
+.activity-row.type-status {
+  border-left-color: var(--neutral);
+}
+
+.activity-row.type-asset {
+  border-left-color: var(--accent);
+}
+
+.activity-row.type-stage {
+  border-left-color: var(--accent);
+}
+
+.activity-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.activity-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-details strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.activity-details p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.activity-time {
+  font-size: 10px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.empty-activity {
+  text-align: center;
+  color: var(--text-faint);
+  font-style: italic;
+  padding: 40px 20px;
+}

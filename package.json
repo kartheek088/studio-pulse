@@ -1,0 +1,16 @@
+{
+  "name": "studio-pulse",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Studio Pulse 2.0 — Production Management MVP",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev:server": "node server/index.js",
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev": "node start-dev.js",
+    "install:all": "npm install --prefix server && npm install --prefix frontend"
+  },
+  "keywords": ["vfx", "animation", "production-management", "pipeline"],
+  "author": "Studio Pulse Team",
+  "license": "MIT"
+}

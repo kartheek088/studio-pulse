@@ -1,0 +1,17 @@
+/* =========================
+   APPSHELL
+   ========================= */
+
+.appshell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px 44px 60px;
+}
+
+.page-container {
+  min-height: calc(100vh - 120px);
+}

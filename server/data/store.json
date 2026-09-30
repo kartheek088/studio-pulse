@@ -1,0 +1,2032 @@
+{
+  "projects": [
+    {
+      "id": "p1",
+      "name": "Mystic Island",
+      "type": "Animation",
+      "client": "Lumen Studios",
+      "deadline": "2026-09-20",
+      "status": "In Production",
+      "health": "Healthy",
+      "workflowId": "connected",
+      "architecture": "Slide 5: Unreal + Blender + Sequencer + Kitsu",
+      "vcs": "Git + Git LFS",
+      "reviewPlatform": "Kitsu",
+      "progress": 72,
+      "shotCount": 15
+    },
+    {
+      "id": "p2",
+      "name": "Neon City",
+      "type": "VFX",
+      "client": "Neon Studios",
+      "deadline": "2026-09-12",
+      "status": "At Risk",
+      "health": "At Risk",
+      "workflowId": "vfx",
+      "progress": 48,
+      "shotCount": 8
+    },
+    {
+      "id": "p3",
+      "name": "Project Aurora",
+      "type": "Virtual Production",
+      "client": "Aurora Films",
+      "deadline": "2026-09-30",
+      "status": "In Production",
+      "health": "Healthy",
+      "workflowId": "virtualProduction",
+      "progress": 31,
+      "shotCount": 6
+    }
+  ],
+  "workflows": {
+    "connected": {
+      "id": "connected",
+      "name": "Connected Pipeline (Unreal + Blender + Kitsu)",
+      "type": "Connected Architecture",
+      "description": "Slide 5 Architecture: Pre-production (Storyboard/Animatic) → Real-time Previz (Unreal Engine) → Asset Production (Blender) → Animation/Layout (Blender+Sequencer) → Render/Review (Unreal+Kitsu)",
+      "stages": [
+        {
+          "id": "pre-production",
+          "name": "Pre-production",
+          "subtitle": "Storyboard / Animatic",
+          "tool": "Storyboard Pro / Pen",
+          "order": 0
+        },
+        {
+          "id": "realtime-previz",
+          "name": "Real-time Previz",
+          "subtitle": "Unreal Engine",
+          "tool": "Unreal Engine",
+          "order": 1
+        },
+        {
+          "id": "asset-production",
+          "name": "Asset Production",
+          "subtitle": "Blender",
+          "tool": "Blender",
+          "order": 2
+        },
+        {
+          "id": "animation-layout",
+          "name": "Animation / Layout",
+          "subtitle": "Blender + Sequencer",
+          "tool": "Blender + Sequencer",
+          "order": 3
+        },
+        {
+          "id": "render-review",
+          "name": "Render / Review",
+          "subtitle": "Unreal + Kitsu",
+          "tool": "Unreal + Kitsu",
+          "order": 4
+        }
+      ]
+    },
+    "animation": {
+      "id": "animation",
+      "name": "Animation",
+      "type": "Animation",
+      "stages": [
+        {
+          "id": "storyboard",
+          "name": "Storyboard",
+          "order": 0
+        },
+        {
+          "id": "layout",
+          "name": "Layout",
+          "order": 1
+        },
+        {
+          "id": "blocking",
+          "name": "Blocking",
+          "order": 2
+        },
+        {
+          "id": "animation",
+          "name": "Animation",
+          "order": 3
+        },
+        {
+          "id": "lighting",
+          "name": "Lighting",
+          "order": 4
+        },
+        {
+          "id": "render",
+          "name": "Render",
+          "order": 5
+        },
+        {
+          "id": "review",
+          "name": "Review",
+          "order": 6
+        },
+        {
+          "id": "approval",
+          "name": "Approval",
+          "order": 7
+        },
+        {
+          "id": "delivery",
+          "name": "Delivery",
+          "order": 8
+        }
+      ]
+    },
+    "vfx": {
+      "id": "vfx",
+      "name": "VFX",
+      "type": "VFX",
+      "stages": [
+        {
+          "id": "plate",
+          "name": "Plate",
+          "order": 0
+        },
+        {
+          "id": "tracking",
+          "name": "Tracking",
+          "order": 1
+        },
+        {
+          "id": "roto",
+          "name": "Roto",
+          "order": 2
+        },
+        {
+          "id": "fx",
+          "name": "FX",
+          "order": 3
+        },
+        {
+          "id": "compositing",
+          "name": "Compositing",
+          "order": 4
+        },
+        {
+          "id": "review",
+          "name": "Review",
+          "order": 5
+        },
+        {
+          "id": "approval",
+          "name": "Approval",
+          "order": 6
+        },
+        {
+          "id": "delivery",
+          "name": "Delivery",
+          "order": 7
+        }
+      ]
+    },
+    "virtualProduction": {
+      "id": "virtualProduction",
+      "name": "Virtual Production",
+      "type": "Virtual Production",
+      "stages": [
+        {
+          "id": "previz",
+          "name": "Previz",
+          "order": 0
+        },
+        {
+          "id": "asset-preparation",
+          "name": "Asset Preparation",
+          "order": 1
+        },
+        {
+          "id": "environment",
+          "name": "Environment",
+          "order": 2
+        },
+        {
+          "id": "lighting",
+          "name": "Lighting",
+          "order": 3
+        },
+        {
+          "id": "capture",
+          "name": "Capture",
+          "order": 4
+        },
+        {
+          "id": "edit",
+          "name": "Edit",
+          "order": 5
+        },
+        {
+          "id": "review",
+          "name": "Review",
+          "order": 6
+        },
+        {
+          "id": "delivery",
+          "name": "Delivery",
+          "order": 7
+        }
+      ]
+    },
+    "custom": {
+      "id": "custom",
+      "name": "Custom",
+      "type": "Custom",
+      "stages": []
+    }
+  },
+  "shots": [
+    {
+      "id": "SHOT01",
+      "projectId": "p1",
+      "name": "Opening Island Shot",
+      "description": "Establishing storyboard and animatic cut of Mystic Island",
+      "stageId": "pre-production",
+      "dccTool": "Storyboard Pro",
+      "activityStep": 6,
+      "artistId": "nv",
+      "priority": "High",
+      "status": "Completed",
+      "progress": 100,
+      "version": 1,
+      "dueDate": "2026-09-05",
+      "dependencies": [],
+      "reviewId": "R-001",
+      "kitsuId": "KT-8460",
+      "gitHash": "91b2c4e",
+      "lfsFile": "mystic_island_animatic_v01.mp4"
+    },
+    {
+      "id": "SHOT02",
+      "projectId": "p1",
+      "name": "Hero Previz & Sequencer Block",
+      "description": "Main character hero shot layout solved in Unreal Engine Previz",
+      "stageId": "realtime-previz",
+      "dccTool": "Unreal Engine",
+      "activityStep": 6,
+      "artistId": "saswat",
+      "priority": "High",
+      "status": "Completed",
+      "progress": 100,
+      "version": 2,
+      "dueDate": "2026-09-06",
+      "dependencies": [],
+      "reviewId": "R-002",
+      "kitsuId": "KT-8472",
+      "gitHash": "3e19c0b",
+      "lfsFile": "shot02_previz_scene.uasset"
+    },
+    {
+      "id": "SHOT03",
+      "projectId": "p1",
+      "name": "Hero Asset Production",
+      "description": "Character mesh, textures and deformation rig in Blender",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "activityStep": 6,
+      "artistId": "saswat",
+      "priority": "High",
+      "status": "Completed",
+      "progress": 100,
+      "version": 2,
+      "dueDate": "2026-09-07",
+      "dependencies": [
+        "CHAR_001"
+      ],
+      "reviewId": null,
+      "gitHash": "5c84d12",
+      "lfsFile": "mira_hero_model_v04.blend"
+    },
+    {
+      "id": "SHOT04",
+      "projectId": "p1",
+      "name": "Forest Chase",
+      "description": "Mira runs through clearing · Sequencer blocking & real-time previz review",
+      "stageId": "animation-layout",
+      "dccTool": "Blender + Sequencer",
+      "activityStep": 4,
+      "artistId": "saswat",
+      "priority": "High",
+      "status": "In Progress",
+      "progress": 80,
+      "version": 4,
+      "dueDate": "2026-09-10",
+      "dependencies": [
+        "CHAR_001",
+        "ENV_014",
+        "CAM_002"
+      ],
+      "reviewId": "R-104",
+      "kitsuId": "KT-8491",
+      "gitHash": "8f2a41d",
+      "lfsFile": "forest_chase_layout_v04.blend"
+    },
+    {
+      "id": "SHOT05",
+      "projectId": "p1",
+      "name": "Character Run Cycle",
+      "description": "Sprint cycle animation and primary curves in Blender",
+      "stageId": "animation-layout",
+      "dccTool": "Blender + Sequencer",
+      "activityStep": 2,
+      "artistId": "nishanth",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 60,
+      "version": 2,
+      "dueDate": "2026-09-09",
+      "dependencies": [
+        "CHAR_001",
+        "CAM_002"
+      ],
+      "reviewId": null,
+      "lfsFile": "mira_run_cycle.blend"
+    },
+    {
+      "id": "SHOT06",
+      "projectId": "p1",
+      "name": "Forest Foliage & Canopy Asset",
+      "description": "Vegetation modeling and geometry node scatter in Blender",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "activityStep": 2,
+      "artistId": "riya",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 45,
+      "version": 3,
+      "dueDate": "2026-09-11",
+      "dependencies": [
+        "ENV_014"
+      ],
+      "reviewId": null,
+      "lfsFile": "forest_canopy_v03.blend"
+    },
+    {
+      "id": "SHOT07",
+      "projectId": "p1",
+      "name": "Secondary Rig Deformers",
+      "description": "Hair and cloth simulation vertex groups in Blender",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "activityStep": 2,
+      "artistId": "mj",
+      "priority": "Low",
+      "status": "In Progress",
+      "progress": 30,
+      "version": 1,
+      "dueDate": "2026-09-12",
+      "dependencies": [
+        "CHAR_001"
+      ],
+      "reviewId": null,
+      "lfsFile": "mira_cloth_deformers.blend"
+    },
+    {
+      "id": "SHOT08",
+      "projectId": "p1",
+      "name": "Sequencer Render Test",
+      "description": "Unreal Sequencer render pass and Kitsu review test",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "activityStep": 4,
+      "artistId": "saswat",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 20,
+      "version": 2,
+      "dueDate": "2026-09-12",
+      "dependencies": [
+        "ENV_014",
+        "CAM_002"
+      ],
+      "reviewId": "R-108",
+      "lfsFile": "shot08_sequencer_test.uasset"
+    },
+    {
+      "id": "SHOT09",
+      "projectId": "p1",
+      "name": "Hero Composition Review",
+      "description": "Final render queued in Kitsu for director review",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "activityStep": 5,
+      "artistId": "saswat",
+      "priority": "High",
+      "status": "Review",
+      "progress": 90,
+      "version": 7,
+      "dueDate": "2026-09-08",
+      "dependencies": [],
+      "reviewId": "R-109",
+      "kitsuId": "KT-8488",
+      "lfsFile": "shot09_hero_comp.uasset"
+    },
+    {
+      "id": "SHOT10",
+      "projectId": "p1",
+      "name": "Crowd Creature Asset",
+      "description": "Forest creature flocking and LOD generation in Blender",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "activityStep": 2,
+      "artistId": "riya",
+      "priority": "High",
+      "status": "Blocked",
+      "progress": 10,
+      "version": 1,
+      "dueDate": "2026-09-13",
+      "dependencies": [
+        "CHAR_002"
+      ],
+      "reviewId": null,
+      "lfsFile": "forest_guardian_mesh.blend"
+    },
+    {
+      "id": "SHOT11",
+      "projectId": "p1",
+      "name": "Opening Dialogue Layout",
+      "description": "Camera placement and acting blockout in Blender Sequencer",
+      "stageId": "animation-layout",
+      "dccTool": "Blender + Sequencer",
+      "activityStep": 1,
+      "artistId": "akshay",
+      "priority": "Medium",
+      "status": "Not Started",
+      "progress": 0,
+      "dueDate": "2026-09-14",
+      "dependencies": [
+        "CHAR_001"
+      ],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT12",
+      "projectId": "p1",
+      "name": "Closing Shot Final Output",
+      "description": "Final Unreal render approved and delivered to master assembly",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "activityStep": 6,
+      "artistId": "saswat",
+      "priority": "Low",
+      "status": "Completed",
+      "progress": 100,
+      "version": 5,
+      "dueDate": "2026-09-20",
+      "dependencies": [],
+      "reviewId": null,
+      "lfsFile": "shot12_final_master.mov"
+    },
+    {
+      "id": "SHOT13",
+      "projectId": "p1",
+      "name": "Transition Atmosphere Previz",
+      "description": "Volumetric fog and lighting previz in Unreal Engine",
+      "stageId": "realtime-previz",
+      "dccTool": "Unreal Engine",
+      "activityStep": 1,
+      "artistId": "akshay",
+      "priority": "Medium",
+      "status": "Not Started",
+      "progress": 0,
+      "dueDate": "2026-09-15",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT14",
+      "projectId": "p1",
+      "name": "Bridge Sequence Render",
+      "description": "Unreal Sequencer render pass awaiting camera drone asset",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "activityStep": 2,
+      "artistId": "riya",
+      "priority": "Medium",
+      "status": "Blocked",
+      "progress": 5,
+      "dueDate": "2026-09-16",
+      "dependencies": [
+        "CAM_003"
+      ],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT15",
+      "projectId": "p1",
+      "name": "Final Movie Sequence Output",
+      "description": "Master sequence assembled from approved Unreal renders",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "activityStep": 6,
+      "artistId": "nv",
+      "priority": "Low",
+      "status": "Completed",
+      "progress": 100,
+      "dueDate": "2026-09-20",
+      "dependencies": [],
+      "reviewId": null,
+      "lfsFile": "mystic_island_master_cut_v01.mp4"
+    },
+    {
+      "id": "SHOT16",
+      "projectId": "p2",
+      "name": "Plate Capture",
+      "description": "Original plate for VFX pass",
+      "stageId": "plate",
+      "artistId": "nv",
+      "priority": "High",
+      "status": "Completed",
+      "progress": 100,
+      "version": 3,
+      "dueDate": "2026-09-02",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT17",
+      "projectId": "p2",
+      "name": "Camera Tracking",
+      "description": "2D/3D camera solve",
+      "stageId": "tracking",
+      "artistId": "nv",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 40,
+      "version": 1,
+      "dueDate": "2026-09-10",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT18",
+      "projectId": "p2",
+      "name": "Roto Pass",
+      "description": "Object rotoscoping",
+      "stageId": "roto",
+      "artistId": "RS",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 50,
+      "version": 2,
+      "dueDate": "2026-09-11",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT19",
+      "projectId": "p2",
+      "name": "FX Sim",
+      "description": "Water and particle simulation",
+      "stageId": "fx",
+      "artistId": "NV",
+      "priority": "High",
+      "status": "In Progress",
+      "progress": 35,
+      "version": 1,
+      "dueDate": "2026-09-12",
+      "dependencies": [
+        "FX_001"
+      ],
+      "reviewId": "R-119"
+    },
+    {
+      "id": "SHOT20",
+      "projectId": "p2",
+      "name": "Comp Pass",
+      "description": "Final compositing",
+      "stageId": "compositing",
+      "artistId": "RS",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 55,
+      "version": 3,
+      "dueDate": "2026-09-09",
+      "dependencies": [
+        "ENV_011"
+      ],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT21",
+      "projectId": "p2",
+      "name": "Review",
+      "description": "Shot ready for review",
+      "stageId": "review",
+      "artistId": "RS",
+      "priority": "High",
+      "status": "Review",
+      "progress": 85,
+      "version": 3,
+      "dueDate": "2026-09-08",
+      "dependencies": [],
+      "reviewId": "R-125"
+    },
+    {
+      "id": "SHOT22",
+      "projectId": "p2",
+      "name": "Final Approval",
+      "description": "Shot awaiting approval",
+      "stageId": "approval",
+      "artistId": "NV",
+      "priority": "Low",
+      "status": "Review",
+      "progress": 70,
+      "dueDate": "2026-09-14",
+      "dependencies": [],
+      "reviewId": "R-127"
+    },
+    {
+      "id": "SHOT23",
+      "projectId": "p2",
+      "name": "Final Delivery",
+      "description": "Rendered final frame",
+      "stageId": "delivery",
+      "artistId": "RS",
+      "priority": "Low",
+      "status": "Not Started",
+      "progress": 0,
+      "dueDate": "2026-09-20",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT24",
+      "projectId": "p3",
+      "name": "Previz Complete",
+      "description": "Previsualization approved",
+      "stageId": "previz",
+      "artistId": "nv",
+      "priority": "High",
+      "status": "Completed",
+      "progress": 100,
+      "version": 1,
+      "dueDate": "2026-09-01",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT25",
+      "projectId": "p3",
+      "name": "Environment Prep",
+      "description": "Digital environment assets",
+      "stageId": "environment",
+      "artistId": "RS",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 50,
+      "version": 2,
+      "dueDate": "2026-09-12",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT26",
+      "projectId": "p3",
+      "name": "Lighting Setup",
+      "description": "On-set lighting coordination",
+      "stageId": "lighting",
+      "artistId": "RS",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 40,
+      "version": 1,
+      "dueDate": "2026-09-13",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT27",
+      "projectId": "p3",
+      "name": "Capture Prep",
+      "description": "Camera and stage prep",
+      "stageId": "capture",
+      "artistId": "nv",
+      "priority": "Medium",
+      "status": "In Progress",
+      "progress": 30,
+      "dueDate": "2026-09-14",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT28",
+      "projectId": "p3",
+      "name": "On-Set Edit",
+      "description": "Real-time edit session",
+      "stageId": "edit",
+      "artistId": "RS",
+      "priority": "High",
+      "status": "Review",
+      "progress": 80,
+      "version": 2,
+      "dueDate": "2026-09-09",
+      "dependencies": [],
+      "reviewId": "R-135"
+    },
+    {
+      "id": "SHOT29",
+      "projectId": "p3",
+      "name": "Delivery Batch",
+      "description": "Final production delivery",
+      "stageId": "review",
+      "artistId": "RS",
+      "priority": "Low",
+      "status": "Not Started",
+      "progress": 0,
+      "dueDate": "2026-09-15",
+      "dependencies": [],
+      "reviewId": null
+    },
+    {
+      "id": "SHOT30",
+      "projectId": "p3",
+      "name": "Post-Production",
+      "description": "Client delivery",
+      "stageId": "delivery",
+      "artistId": "nv",
+      "priority": "Low",
+      "status": "Not Started",
+      "progress": 0,
+      "dueDate": "2026-09-30",
+      "dependencies": [],
+      "reviewId": null
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-101",
+      "shotId": "SHOT01",
+      "name": "Storyboard & Animatic Cut",
+      "stageId": "pre-production",
+      "dccTool": "Storyboard Pro",
+      "artistId": "nv",
+      "status": "Completed",
+      "priority": "High",
+      "dueDate": "2026-09-05",
+      "activityStep": 6
+    },
+    {
+      "id": "T-102",
+      "shotId": "SHOT02",
+      "name": "Unreal Previz Camera Solve",
+      "stageId": "realtime-previz",
+      "dccTool": "Unreal Engine",
+      "artistId": "saswat",
+      "status": "Completed",
+      "priority": "High",
+      "dueDate": "2026-09-06",
+      "activityStep": 6
+    },
+    {
+      "id": "T-103",
+      "shotId": "SHOT03",
+      "name": "Hero Asset High-Res Mesh",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "artistId": "saswat",
+      "status": "Completed",
+      "priority": "High",
+      "dueDate": "2026-09-07",
+      "activityStep": 6
+    },
+    {
+      "id": "T-104",
+      "shotId": "SHOT04",
+      "name": "Sequencer Animation Blocking",
+      "stageId": "animation-layout",
+      "dccTool": "Blender + Sequencer",
+      "artistId": "saswat",
+      "status": "In Progress",
+      "priority": "High",
+      "dueDate": "2026-09-10",
+      "activityStep": 4
+    },
+    {
+      "id": "T-105",
+      "shotId": "SHOT04",
+      "name": "Unreal Previz Sync & Playblast",
+      "stageId": "animation-layout",
+      "dccTool": "Unreal Engine",
+      "artistId": "saswat",
+      "status": "Completed",
+      "priority": "Medium",
+      "dueDate": "2026-09-09",
+      "activityStep": 4
+    },
+    {
+      "id": "T-106",
+      "shotId": "SHOT05",
+      "name": "Character Sprint Cycle",
+      "stageId": "animation-layout",
+      "dccTool": "Blender",
+      "artistId": "nishanth",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-09",
+      "activityStep": 2
+    },
+    {
+      "id": "T-107",
+      "shotId": "SHOT06",
+      "name": "Forest Tree Assets & LODs",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "artistId": "riya",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-11",
+      "activityStep": 2
+    },
+    {
+      "id": "T-108",
+      "shotId": "SHOT07",
+      "name": "Secondary Rig Deformers",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "artistId": "mj",
+      "status": "In Progress",
+      "priority": "Low",
+      "dueDate": "2026-09-12",
+      "activityStep": 2
+    },
+    {
+      "id": "T-109",
+      "shotId": "SHOT08",
+      "name": "Unreal Sequencer Test Render",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "artistId": "saswat",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-12",
+      "activityStep": 4
+    },
+    {
+      "id": "T-110",
+      "shotId": "SHOT09",
+      "name": "Kitsu Review Feedback Pass",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "artistId": "saswat",
+      "status": "In Progress",
+      "priority": "High",
+      "dueDate": "2026-09-08",
+      "activityStep": 5
+    },
+    {
+      "id": "T-111",
+      "shotId": "SHOT10",
+      "name": "Crowd Creature Asset Sculpt",
+      "stageId": "asset-production",
+      "dccTool": "Blender",
+      "artistId": "riya",
+      "status": "Blocked",
+      "priority": "High",
+      "dueDate": "2026-09-13",
+      "activityStep": 2
+    },
+    {
+      "id": "T-112",
+      "shotId": "SHOT11",
+      "name": "Opening Dialogue Camera Setup",
+      "stageId": "animation-layout",
+      "dccTool": "Blender + Sequencer",
+      "artistId": "akshay",
+      "status": "Not Started",
+      "priority": "Medium",
+      "dueDate": "2026-09-14",
+      "activityStep": 1
+    },
+    {
+      "id": "T-113",
+      "shotId": "SHOT12",
+      "name": "Final Quality Check & Delivery",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "artistId": "nv",
+      "status": "Completed",
+      "priority": "Low",
+      "dueDate": "2026-09-20",
+      "activityStep": 6
+    },
+    {
+      "id": "T-114",
+      "shotId": "SHOT13",
+      "name": "Real-time Volumetric Lighting",
+      "stageId": "realtime-previz",
+      "dccTool": "Unreal Engine",
+      "artistId": "akshay",
+      "status": "Not Started",
+      "priority": "Medium",
+      "dueDate": "2026-09-15",
+      "activityStep": 1
+    },
+    {
+      "id": "T-115",
+      "shotId": "SHOT14",
+      "name": "Final Bridge 4K Sequence Render",
+      "stageId": "render-review",
+      "dccTool": "Unreal + Kitsu",
+      "artistId": "riya",
+      "status": "Blocked",
+      "priority": "Medium",
+      "dueDate": "2026-09-16",
+      "activityStep": 2
+    },
+    {
+      "id": "T-201",
+      "shotId": "SHOT16",
+      "name": "Plate Prep",
+      "stageId": "plate",
+      "artistId": "nv",
+      "status": "Completed",
+      "priority": "High",
+      "dueDate": "2026-09-02"
+    },
+    {
+      "id": "T-202",
+      "shotId": "SHOT17",
+      "name": "Camera Tracking",
+      "stageId": "tracking",
+      "artistId": "nv",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-10"
+    },
+    {
+      "id": "T-203",
+      "shotId": "SHOT18",
+      "name": "Roto Pass",
+      "stageId": "roto",
+      "artistId": "RS",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-11"
+    },
+    {
+      "id": "T-204",
+      "shotId": "SHOT19",
+      "name": "FX Simulation",
+      "stageId": "fx",
+      "artistId": "NV",
+      "status": "In Progress",
+      "priority": "High",
+      "dueDate": "2026-09-12"
+    },
+    {
+      "id": "T-205",
+      "shotId": "SHOT20",
+      "name": "Comp Pass",
+      "stageId": "compositing",
+      "artistId": "RS",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-09"
+    },
+    {
+      "id": "T-301",
+      "shotId": "SHOT24",
+      "name": "Previz Final",
+      "stageId": "previz",
+      "artistId": "nv",
+      "status": "Completed",
+      "priority": "High",
+      "dueDate": "2026-09-01"
+    },
+    {
+      "id": "T-302",
+      "shotId": "SHOT25",
+      "name": "Env Asset Prep",
+      "stageId": "environment",
+      "artistId": "RS",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-12"
+    },
+    {
+      "id": "T-303",
+      "shotId": "SHOT26",
+      "name": "On-set Lighting",
+      "stageId": "lighting",
+      "artistId": "RS",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-13"
+    },
+    {
+      "id": "T-304",
+      "shotId": "SHOT27",
+      "name": "Camera Prep",
+      "stageId": "capture",
+      "artistId": "nv",
+      "status": "In Progress",
+      "priority": "Medium",
+      "dueDate": "2026-09-14"
+    }
+  ],
+  "assets": [
+    {
+      "id": "CHAR_001",
+      "name": "Mira — Lead Character",
+      "type": "Character",
+      "categoryId": "CHAR_001",
+      "status": "Approved",
+      "owner": "MJ",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT04",
+        "SHOT05"
+      ],
+      "version": 4,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-03",
+          "comment": "Initial blockout"
+        },
+        {
+          "version": 2,
+          "status": "Review",
+          "date": "2026-09-05",
+          "comment": "First clean"
+        },
+        {
+          "version": 3,
+          "status": "Review",
+          "date": "2026-09-06",
+          "comment": "Second pass"
+        },
+        {
+          "version": 4,
+          "status": "Approved",
+          "date": "2026-09-06",
+          "comment": "Director approved"
+        }
+      ]
+    },
+    {
+      "id": "ENV_014",
+      "name": "Forest Environment",
+      "type": "Environment",
+      "status": "Approved",
+      "owner": "RS",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT04",
+        "SHOT06",
+        "SHOT10"
+      ],
+      "version": 5,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-02",
+          "comment": "Base terrain"
+        },
+        {
+          "version": 2,
+          "status": "Review",
+          "date": "2026-09-04",
+          "comment": "Textures added"
+        },
+        {
+          "version": 3,
+          "status": "Review",
+          "date": "2026-09-05",
+          "comment": "Lighting pass"
+        },
+        {
+          "version": 4,
+          "status": "Review",
+          "date": "2026-09-06",
+          "comment": "Detail pass"
+        },
+        {
+          "version": 5,
+          "status": "Approved",
+          "date": "2026-09-07",
+          "comment": "Final approved"
+        }
+      ]
+    },
+    {
+      "id": "CAM_002",
+      "name": "Camera Rig",
+      "type": "Camera",
+      "status": "Approved",
+      "owner": "NV",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT04",
+        "SHOT09",
+        "SHOT31"
+      ],
+      "version": 2,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-01",
+          "comment": "Basic rig"
+        },
+        {
+          "version": 2,
+          "status": "Approved",
+          "date": "2026-09-04",
+          "comment": "Locked for production"
+        }
+      ]
+    },
+    {
+      "id": "CHAR_002",
+      "name": "Forest Guardian",
+      "type": "Character",
+      "status": "In Progress",
+      "owner": "RS",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT10",
+        "SHOT14"
+      ],
+      "version": 2,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-04",
+          "comment": "Blockout"
+        },
+        {
+          "version": 2,
+          "status": "Review",
+          "date": "2026-09-07",
+          "comment": "Waiting approval"
+        }
+      ]
+    },
+    {
+      "id": "PROP_021",
+      "name": "Lantern Staff",
+      "type": "Prop",
+      "status": "In Progress",
+      "owner": "MJ",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT04"
+      ],
+      "version": 1,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-06",
+          "comment": "Created"
+        }
+      ]
+    },
+    {
+      "id": "CAM_003",
+      "name": "Drone Rig",
+      "type": "Camera",
+      "status": "Not Started",
+      "owner": "NV",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT14"
+      ],
+      "version": 1,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-07",
+          "comment": "Rig designed"
+        }
+      ]
+    },
+    {
+      "id": "SHOT04_REVIEW",
+      "name": "SHOT04 Lighting Review",
+      "type": "Review Asset",
+      "status": "Approved",
+      "owner": "Director",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT04"
+      ],
+      "version": 4,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-06",
+          "comment": "Lighting pass"
+        },
+        {
+          "version": 4,
+          "status": "Changes Requested",
+          "date": "2026-09-07",
+          "comment": "Need more contrast"
+        }
+      ]
+    },
+    {
+      "id": "ENV_011",
+      "name": "Virtual City Skyline",
+      "type": "Environment",
+      "status": "In Progress",
+      "owner": "NV",
+      "projectId": "p2",
+      "usedIn": [
+        "SHOT24",
+        "SHOT25"
+      ],
+      "version": 3,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-03",
+          "comment": "Base model"
+        },
+        {
+          "version": 2,
+          "status": "Review",
+          "date": "2026-09-05",
+          "comment": "Textures"
+        },
+        {
+          "version": 3,
+          "status": "In Progress",
+          "date": "2026-09-07",
+          "comment": "Details"
+        }
+      ]
+    },
+    {
+      "id": "FX_001",
+      "name": "Water Sim",
+      "type": "FX",
+      "status": "In Progress",
+      "owner": "NV",
+      "projectId": "p2",
+      "usedIn": [
+        "SHOT23",
+        "SHOT24"
+      ],
+      "version": 2,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-04",
+          "comment": "Base sim"
+        },
+        {
+          "version": 2,
+          "status": "Review",
+          "date": "2026-09-06",
+          "comment": "Refining"
+        }
+      ]
+    },
+    {
+      "id": "CHAR_003",
+      "name": "Mira Rig",
+      "type": "Rig",
+      "status": "Approved",
+      "owner": "MJ",
+      "projectId": "p1",
+      "usedIn": [
+        "SHOT04",
+        "SHOT05"
+      ],
+      "version": 3,
+      "versions": [
+        {
+          "version": 1,
+          "status": "Draft",
+          "date": "2026-09-02",
+          "comment": "Initial rig"
+        },
+        {
+          "version": 2,
+          "status": "Review",
+          "date": "2026-09-05",
+          "comment": "Adjustments"
+        },
+        {
+          "version": 3,
+          "status": "Approved",
+          "date": "2026-09-06",
+          "comment": "Final rig"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "R-001",
+      "shotId": "SHOT01",
+      "version": 1,
+      "status": "Approved",
+      "feedback": "Storyboard approved for layout.",
+      "reviewerId": "director",
+      "date": "2026-09-03T14:00:00Z"
+    },
+    {
+      "id": "R-002",
+      "shotId": "SHOT02",
+      "version": 2,
+      "status": "Approved",
+      "feedback": "Layout approved, moving to blocking.",
+      "reviewerId": "director",
+      "date": "2026-09-05T10:30:00Z"
+    },
+    {
+      "id": "R-104",
+      "shotId": "SHOT04",
+      "version": 4,
+      "status": "Changes Requested",
+      "feedback": "Increase contrast and improve rim lighting.",
+      "reviewerId": "director",
+      "date": "2026-09-07T11:20:00Z"
+    },
+    {
+      "id": "R-108",
+      "shotId": "SHOT08",
+      "version": 2,
+      "status": "Pending Review",
+      "feedback": "",
+      "reviewerId": "director",
+      "date": "2026-09-08T09:00:00Z"
+    },
+    {
+      "id": "R-109",
+      "shotId": "SHOT09",
+      "version": 7,
+      "status": "Changes Requested",
+      "feedback": "Camera movement needs adjustment in frame 482-518.",
+      "reviewerId": "director",
+      "date": "2026-09-08T08:30:00Z"
+    },
+    {
+      "id": "R-119",
+      "shotId": "SHOT19",
+      "version": 1,
+      "status": "Pending Review",
+      "feedback": "",
+      "reviewerId": "director",
+      "date": "2026-09-08T07:15:00Z"
+    },
+    {
+      "id": "R-125",
+      "shotId": "SHOT21",
+      "version": 3,
+      "status": "Approved",
+      "feedback": "Approved for final render.",
+      "reviewerId": "director",
+      "date": "2026-09-07T14:00:00Z"
+    },
+    {
+      "id": "R-127",
+      "shotId": "SHOT22",
+      "version": 2,
+      "status": "Pending Review",
+      "feedback": "",
+      "reviewerId": "director",
+      "date": "2026-09-08T06:45:00Z"
+    },
+    {
+      "id": "R-135",
+      "shotId": "SHOT28",
+      "version": 2,
+      "status": "Changes Requested",
+      "feedback": "Capture framing needs adjustment for IP transport.",
+      "reviewerId": "director",
+      "date": "2026-09-08T06:00:00Z"
+    },
+    {
+      "id": "R-110",
+      "shotId": "SHOT13",
+      "version": 1,
+      "status": "Pending Review",
+      "feedback": "",
+      "reviewerId": "director",
+      "date": "2026-09-08T08:00:00Z"
+    }
+  ],
+  "activities": [
+    {
+      "id": "A-001",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-104",
+      "text": "SHOT04 submitted v04",
+      "detail": "Forest Chase · Lighting",
+      "time": "2026-09-07T09:00:00Z"
+    },
+    {
+      "id": "A-002",
+      "type": "task",
+      "entityType": "task",
+      "entity": "T-104",
+      "text": "Lighting Setup completed",
+      "detail": "SHOT04 · Saswat",
+      "time": "2026-09-07T10:18:00Z"
+    },
+    {
+      "id": "A-003",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-109",
+      "text": "SHOT09 review comment added",
+      "detail": "Changes requested: Camera movement needs adjustment",
+      "time": "2026-09-08T08:30:00Z"
+    },
+    {
+      "id": "A-004",
+      "type": "approval",
+      "entityType": "shot",
+      "entity": "SHOT01",
+      "text": "SHOT01 storyboard approved",
+      "detail": "Opening Island Shot",
+      "time": "2026-09-03T14:00:00Z"
+    },
+    {
+      "id": "A-005",
+      "type": "approval",
+      "entityType": "task",
+      "entity": "T-102",
+      "text": "Layout task completed",
+      "detail": "SHOT02",
+      "time": "2026-09-05T16:20:00Z"
+    },
+    {
+      "id": "A-006",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-002",
+      "text": "Director requested changes",
+      "detail": "SHOT02: Camera framing needs refinement",
+      "time": "2026-09-05T17:30:00Z"
+    },
+    {
+      "id": "A-007",
+      "type": "status",
+      "entityType": "shot",
+      "entity": "SHOT05",
+      "text": "Character Animation started",
+      "detail": "Assigned to MJ",
+      "time": "2026-09-06T09:50:00Z"
+    },
+    {
+      "id": "A-008",
+      "type": "review",
+      "entityType": "shot",
+      "entity": "SHOT08",
+      "text": "Submitted for review",
+      "detail": "v02 · Render Setup",
+      "time": "2026-09-08T09:15:00Z"
+    },
+    {
+      "id": "A-009",
+      "type": "approval",
+      "entityType": "asset",
+      "entity": "CHAR_001",
+      "text": "Character Mira v04 approved",
+      "detail": "Ready for use in SHOT04, SHOT05",
+      "time": "2026-09-06T16:20:00Z"
+    },
+    {
+      "id": "A-010",
+      "type": "block",
+      "entityType": "shot",
+      "entity": "SHOT10",
+      "text": "SHOT10 blocked",
+      "detail": "Waiting for Forest Guardian asset approval",
+      "time": "2026-09-07T11:45:00Z"
+    },
+    {
+      "id": "A-011",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-119",
+      "text": "SHOT19 submitted for VFX",
+      "detail": "Water Sim pass · NV",
+      "time": "2026-09-08T07:15:00Z"
+    },
+    {
+      "id": "A-012",
+      "type": "status",
+      "entityType": "shot",
+      "entity": "SHOT06",
+      "text": "Environment lighting in progress",
+      "detail": "Assigned to RS",
+      "time": "2026-09-07T08:00:00Z"
+    },
+    {
+      "id": "A-013",
+      "type": "approval",
+      "entityType": "asset",
+      "entity": "CAM_002",
+      "text": "Camera Rig v02 approved",
+      "detail": "Used in SHOT04, SHOT09, SHOT31",
+      "time": "2026-09-04T12:00:00Z"
+    },
+    {
+      "id": "A-014",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-135",
+      "text": "SHOT28 edit review requested",
+      "detail": "Capture framing needs adjustment",
+      "time": "2026-09-08T06:00:00Z"
+    },
+    {
+      "id": "A-015",
+      "type": "block",
+      "entityType": "shot",
+      "entity": "SHOT14",
+      "text": "SHOT14 blocked",
+      "detail": "Waiting for Drone Rig asset",
+      "time": "2026-09-08T11:00:00Z"
+    },
+    {
+      "id": "A-016",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-110",
+      "text": "SHOT13 submitted for rendering",
+      "detail": "Transition FX",
+      "time": "2026-09-08T08:00:00Z"
+    },
+    {
+      "id": "A-017",
+      "type": "approval",
+      "entityType": "task",
+      "entity": "T-104",
+      "text": "Lighting Setup completed",
+      "detail": "SHOT04 advances to Render",
+      "time": "2026-09-07T10:18:00Z"
+    },
+    {
+      "id": "A-018",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-104",
+      "text": "New version submitted",
+      "detail": "v05 for SHOT04 Lighting",
+      "time": "2026-09-08T10:42:00Z"
+    },
+    {
+      "id": "A-019",
+      "type": "approval",
+      "entityType": "review",
+      "entity": "R-125",
+      "text": "Shot 21 approved",
+      "detail": "Moving to Delivery",
+      "time": "2026-09-07T14:00:00Z"
+    },
+    {
+      "id": "A-020",
+      "type": "status",
+      "entityType": "shot",
+      "entity": "SHOT15",
+      "text": "Final Output processing",
+      "detail": "Delivery stage",
+      "time": "2026-09-08T05:30:00Z"
+    },
+    {
+      "id": "A-021",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-108",
+      "text": "Review submitted",
+      "detail": "SHOT08 v02",
+      "time": "2026-09-08T09:00:00Z"
+    },
+    {
+      "id": "A-022",
+      "type": "approval",
+      "entityType": "task",
+      "entity": "T-104",
+      "text": "Key Light Pass completed",
+      "detail": "Shot SHOT04 lighting 100%",
+      "time": "2026-09-07T09:45:00Z"
+    },
+    {
+      "id": "A-023",
+      "type": "review",
+      "entityType": "review",
+      "entity": "R-127",
+      "text": "SHOT22 entered review",
+      "detail": "v02 pending director approval",
+      "time": "2026-09-08T06:45:00Z"
+    },
+    {
+      "id": "A-024",
+      "type": "status",
+      "entityType": "shot",
+      "entity": "SHOT12",
+      "text": "Delivery check initiated",
+      "detail": "Quality control review started",
+      "time": "2026-09-08T10:00:00Z"
+    }
+  ],
+  "gitCommits": [
+    {
+      "id": "GIT-001",
+      "hash": "8f2a41d",
+      "branch": "main",
+      "author": "saswat",
+      "shotId": "SHOT04",
+      "assetId": null,
+      "version": "v04",
+      "message": "Animation layout sequencer sync with Unreal real-time previz",
+      "timestamp": "2026-09-08T09:30:00Z",
+      "lfsFiles": [
+        {
+          "name": "forest_chase_layout_v04.blend",
+          "size": "640 MB",
+          "oid": "sha256:8a7c29ef40",
+          "dcc": "Blender"
+        },
+        {
+          "name": "forest_chase_previz.uasset",
+          "size": "1.12 GB",
+          "oid": "sha256:3b99f24da1",
+          "dcc": "Unreal Engine"
+        },
+        {
+          "name": "forest_chase_playblast_v04.mp4",
+          "size": "84 MB",
+          "oid": "sha256:77f12e80aa",
+          "dcc": "Sequencer Playblast"
+        }
+      ],
+      "totalSize": "1.84 GB"
+    },
+    {
+      "id": "GIT-002",
+      "hash": "3e19c0b",
+      "branch": "main",
+      "author": "saswat",
+      "shotId": "SHOT02",
+      "assetId": null,
+      "version": "v02",
+      "message": "Previz camera solve and Unreal Sequencer blockout",
+      "timestamp": "2026-09-06T15:20:00Z",
+      "lfsFiles": [
+        {
+          "name": "shot02_previz_scene.uasset",
+          "size": "920 MB",
+          "oid": "sha256:fa239d841b",
+          "dcc": "Unreal Engine"
+        },
+        {
+          "name": "shot02_camera_rig.blend",
+          "size": "145 MB",
+          "oid": "sha256:119bc83aef",
+          "dcc": "Blender"
+        }
+      ],
+      "totalSize": "1.06 GB"
+    },
+    {
+      "id": "GIT-003",
+      "hash": "5c84d12",
+      "branch": "main",
+      "author": "mj",
+      "shotId": null,
+      "assetId": "CHAR_001",
+      "version": "v04",
+      "message": "Mira hero character Blender mesh & deformation rig",
+      "timestamp": "2026-09-06T16:00:00Z",
+      "lfsFiles": [
+        {
+          "name": "mira_hero_model_v04.blend",
+          "size": "1.4 GB",
+          "oid": "sha256:56dc81a179",
+          "dcc": "Blender"
+        },
+        {
+          "name": "mira_rig_controllers.blend",
+          "size": "280 MB",
+          "oid": "sha256:4910ebff12",
+          "dcc": "Blender"
+        },
+        {
+          "name": "mira_textures_4k.tar.lfs",
+          "size": "2.3 GB",
+          "oid": "sha256:883ae012fa",
+          "dcc": "Substance / Textures"
+        }
+      ],
+      "totalSize": "3.98 GB"
+    },
+    {
+      "id": "GIT-004",
+      "hash": "a44917b",
+      "branch": "main",
+      "author": "rs",
+      "shotId": null,
+      "assetId": "ENV_014",
+      "version": "v05",
+      "message": "Forest environment master terrain and foliage scatter",
+      "timestamp": "2026-09-07T14:10:00Z",
+      "lfsFiles": [
+        {
+          "name": "forest_terrain_scatter.blend",
+          "size": "2.1 GB",
+          "oid": "sha256:39efaa441c",
+          "dcc": "Blender"
+        },
+        {
+          "name": "forest_props_megascans.uasset",
+          "size": "3.8 GB",
+          "oid": "sha256:2910fa770b",
+          "dcc": "Unreal Engine"
+        }
+      ],
+      "totalSize": "5.9 GB"
+    },
+    {
+      "id": "GIT-005",
+      "hash": "91b2c4e",
+      "branch": "main",
+      "author": "nv",
+      "shotId": "SHOT01",
+      "assetId": null,
+      "version": "v01",
+      "message": "Pre-production storyboard panels and animatic cut",
+      "timestamp": "2026-09-03T11:00:00Z",
+      "lfsFiles": [
+        {
+          "name": "storyboard_panels_highres.pdf",
+          "size": "120 MB",
+          "oid": "sha256:6631ad4419",
+          "dcc": "Storyboard Pro"
+        },
+        {
+          "name": "mystic_island_animatic_v01.mp4",
+          "size": "310 MB",
+          "oid": "sha256:7739ab0128",
+          "dcc": "Animatic Cut"
+        }
+      ],
+      "totalSize": "430 MB"
+    }
+  ],
+  "gitFiles": [
+    {
+      "id": "LFS-1",
+      "name": "forest_chase_layout_v04.blend",
+      "size": "640 MB",
+      "lockedBy": "saswat",
+      "dcc": "Blender",
+      "type": "3D Asset / Scene",
+      "shotId": "SHOT04",
+      "updated": "2 hours ago"
+    },
+    {
+      "id": "LFS-2",
+      "name": "forest_chase_previz.uasset",
+      "size": "1.12 GB",
+      "lockedBy": null,
+      "dcc": "Unreal Engine",
+      "type": "Real-time Previz",
+      "shotId": "SHOT04",
+      "updated": "3 hours ago"
+    },
+    {
+      "id": "LFS-3",
+      "name": "mira_hero_model_v04.blend",
+      "size": "1.40 GB",
+      "lockedBy": "mj",
+      "dcc": "Blender",
+      "type": "Character Rig",
+      "assetId": "CHAR_001",
+      "updated": "Yesterday"
+    },
+    {
+      "id": "LFS-4",
+      "name": "forest_terrain_scatter.blend",
+      "size": "2.10 GB",
+      "lockedBy": null,
+      "dcc": "Blender",
+      "type": "Environment",
+      "assetId": "ENV_014",
+      "updated": "Sep 7"
+    },
+    {
+      "id": "LFS-5",
+      "name": "forest_props_megascans.uasset",
+      "size": "3.80 GB",
+      "lockedBy": null,
+      "dcc": "Unreal Engine",
+      "type": "Props / Shaders",
+      "assetId": "ENV_014",
+      "updated": "Sep 7"
+    },
+    {
+      "id": "LFS-6",
+      "name": "forest_chase_playblast_v04.mp4",
+      "size": "84 MB",
+      "lockedBy": null,
+      "dcc": "Sequencer",
+      "type": "Playblast Video",
+      "shotId": "SHOT04",
+      "updated": "Today"
+    },
+    {
+      "id": "LFS-7",
+      "name": "mystic_island_master_cut_v01.mp4",
+      "size": "1.85 GB",
+      "lockedBy": null,
+      "dcc": "Unreal Engine",
+      "type": "Final Output Render",
+      "shotId": "SHOT15",
+      "updated": "Sep 8"
+    }
+  ],
+  "kitsuReviews": [
+    {
+      "id": "KT-REV-104",
+      "kitsuId": "KT-8491",
+      "shotId": "SHOT04",
+      "version": "v04",
+      "status": "Pending Review",
+      "reviewerId": "director",
+      "syncStatus": "Synchronized",
+      "playblastUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "timecode": "01:00:04:12",
+      "fps": 24,
+      "totalFrames": 144,
+      "feedback": "Rim lighting on Mira is slightly dark against background foliage. Add a specular kicker and smooth camera curves.",
+      "date": "2026-09-08T09:35:00Z",
+      "annotations": [
+        {
+          "id": "ann-101",
+          "frame": 48,
+          "timecode": "00:02:00",
+          "author": "director",
+          "authorRole": "Creative Director",
+          "text": "Rim lighting on Mira is slightly dark against background foliage. Add a specular kicker.",
+          "coords": {
+            "x": 58,
+            "y": 35
+          },
+          "resolved": false,
+          "createdAt": "2026-09-08T09:40:00Z"
+        },
+        {
+          "id": "ann-102",
+          "frame": 112,
+          "timecode": "00:04:16",
+          "author": "nv",
+          "authorRole": "Lead",
+          "text": "Sequencer camera shake is a bit aggressive on frame 112. Smooth curves in Blender Graph Editor.",
+          "coords": {
+            "x": 42,
+            "y": 60
+          },
+          "resolved": true,
+          "createdAt": "2026-09-08T09:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "KT-REV-109",
+      "kitsuId": "KT-8488",
+      "shotId": "SHOT09",
+      "version": "v07",
+      "status": "Changes Requested",
+      "reviewerId": "director",
+      "syncStatus": "Synchronized",
+      "playblastUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "timecode": "01:00:08:20",
+      "fps": 24,
+      "totalFrames": 210,
+      "feedback": "Camera movement needs adjustment in frames 482-518.",
+      "date": "2026-09-08T08:30:00Z",
+      "annotations": [
+        {
+          "id": "ann-103",
+          "frame": 490,
+          "timecode": "00:20:10",
+          "author": "director",
+          "authorRole": "Creative Director",
+          "text": "Focal plane drifts away from subject right as character turns.",
+          "coords": {
+            "x": 50,
+            "y": 50
+          },
+          "resolved": false,
+          "createdAt": "2026-09-08T08:35:00Z"
+        }
+      ]
+    },
+    {
+      "id": "KT-REV-101",
+      "kitsuId": "KT-8460",
+      "shotId": "SHOT01",
+      "version": "v01",
+      "status": "Approved",
+      "reviewerId": "director",
+      "syncStatus": "Synchronized",
+      "playblastUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
+      "timecode": "01:00:00:00",
+      "fps": 24,
+      "totalFrames": 96,
+      "feedback": "Pre-production animatic locked! Approved to proceed to Unreal Previz.",
+      "date": "2026-09-03T14:00:00Z",
+      "annotations": []
+    },
+    {
+      "id": "KT-REV-102",
+      "kitsuId": "KT-8472",
+      "shotId": "SHOT02",
+      "version": "v02",
+      "status": "Approved",
+      "reviewerId": "director",
+      "syncStatus": "Synchronized",
+      "playblastUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyBlazes.mp4",
+      "timecode": "01:00:02:00",
+      "fps": 24,
+      "totalFrames": 120,
+      "feedback": "Real-time Unreal previz approved. Moving to Blender asset and animation production.",
+      "date": "2026-09-05T10:30:00Z",
+      "annotations": []
+    }
+  ],
+  "activitySteps": [
+    {
+      "step": 1,
+      "id": "create-assign-task",
+      "title": "Create / assign task",
+      "shortTitle": "1. Create / Assign",
+      "desc": "Lead creates and assigns task to artist with target pipeline stage, DCC tool, and deadline",
+      "icon": "CheckSquare",
+      "dcc": "Studio Pulse Engine",
+      "color": "#3b82f6"
+    },
+    {
+      "step": 2,
+      "id": "work-asset-shot",
+      "title": "Work on asset or shot",
+      "shortTitle": "2. DCC Work",
+      "desc": "Artist works on geometry, rigs, animations, or sets in Blender or Unreal Engine with active file locks",
+      "icon": "Boxes",
+      "dcc": "Blender / Unreal Engine",
+      "color": "#8b5cf6"
+    },
+    {
+      "step": 3,
+      "id": "commit-version",
+      "title": "Commit version",
+      "shortTitle": "3. Commit (Git LFS)",
+      "desc": "Artist commits iteration with Git + Git LFS version bump (v01 → v02), tracking large binary scene files",
+      "icon": "GitCommit",
+      "dcc": "Git + Git LFS",
+      "color": "#ec4899"
+    },
+    {
+      "step": 4,
+      "id": "realtime-preview",
+      "title": "Real-time preview",
+      "shortTitle": "4. Real-time Preview",
+      "desc": "Generate interactive Unreal Engine Previz playblast at 60 FPS for instantaneous internal verification",
+      "icon": "PlaySquare",
+      "dcc": "Unreal Viewport / Sequencer",
+      "color": "#06b6d4"
+    },
+    {
+      "step": 5,
+      "id": "review-kitsu",
+      "title": "Review in Kitsu",
+      "shortTitle": "5. Review in Kitsu",
+      "desc": "Submit playblast to Kitsu Review queue for frame-by-frame director annotations and collaborative sign-off",
+      "icon": "MessageSquareCheck",
+      "dcc": "Kitsu Platform",
+      "color": "#f59e0b"
+    },
+    {
+      "step": 6,
+      "id": "approve-output",
+      "title": "Approve → final output",
+      "shortTitle": "6. Approve & Delivery",
+      "desc": "Director signs off in Kitsu/Studio Pulse, triggering final Sequencer render, delivery package, and stage advance",
+      "icon": "CheckCircle2",
+      "dcc": "Unreal Batch Render / Delivery",
+      "color": "#10b981"
+    }
+  ],
+  "role": "productionLead"
+}
