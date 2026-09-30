@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useProduction } from "../context/ProductionContext";
 import { Badge } from "../components/common/Badge";
 import { RealtimePreviewModal } from "../components/common/RealtimePreviewModal";
+import { NewProjectModal } from "../components/projects/NewProjectModal";
 import {
+  FolderPlus,
   FolderKanban,
   Film,
   Clock,
@@ -53,12 +55,14 @@ export function Dashboard() {
     updateAssetVersion,
     commitToGitLfs,
     submitToKitsuReview,
+    createProject,
   } = useProduction();
 
   const [feedbackNotes, setFeedbackNotes] = useState({});
   const [actionDone, setActionDone] = useState({});
   const [previewShot, setPreviewShot] = useState(null);
   const [toastMsg, setToastMsg] = useState(null);
+  const [isNewProjectOpen, setIsNewProjectOpen] = useState(false);
   const [artistViewMode, setArtistViewMode] = useState("my"); // "my" | "all"
   const [lockedAssets, setLockedAssets] = useState({
     CHAR_001: "MJ (Maya Joshi)",
@@ -967,14 +971,25 @@ export function Dashboard() {
               <h2>Active Production Runs</h2>
               <p>Real-time delivery progress across client engagements</p>
             </div>
-            <button
-              type="button"
-              className="panel-action"
-              onClick={() => navigate("/projects")}
-            >
-              <span>All projects</span>
-              <ArrowRight size={13} />
-            </button>
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <button
+                type="button"
+                className="btn-primary"
+                style={{ padding: "6px 12px", fontSize: "12px", borderRadius: "6px" }}
+                onClick={() => setIsNewProjectOpen(true)}
+              >
+                <FolderPlus size={14} />
+                <span>New Project</span>
+              </button>
+              <button
+                type="button"
+                className="panel-action"
+                onClick={() => navigate("/projects")}
+              >
+                <span>All projects</span>
+                <ArrowRight size={13} />
+              </button>
+            </div>
           </div>
 
           <div className="project-card-list">
@@ -1090,6 +1105,12 @@ export function Dashboard() {
           </div>
         </section>
       </div>
+
+      <NewProjectModal
+        isOpen={isNewProjectOpen}
+        onClose={() => setIsNewProjectOpen(false)}
+        onCreateProject={createProject}
+      />
     </div>
   );
 }

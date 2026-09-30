@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useProduction } from "../../context/ProductionContext";
+import { NewProjectModal } from "../projects/NewProjectModal";
 import {
   Briefcase,
   Palette,
@@ -12,6 +13,7 @@ import {
   UserCheck,
   ExternalLink,
   LogIn,
+  FolderPlus,
 } from "lucide-react";
 
 export function TopBar() {
@@ -23,9 +25,11 @@ export function TopBar() {
     switchUser,
     logout,
     toggleMobileMenu,
+    createProject,
   } = useProduction();
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isNewProjectOpen, setIsNewProjectOpen] = useState(false);
   const menuRef = useRef(null);
 
   // Close dropdown on outside click
@@ -74,6 +78,18 @@ export function TopBar() {
       </div>
 
       <div className="topbar-right">
+        {currentUser && (
+          <button
+            type="button"
+            className="topbar-new-project-btn"
+            onClick={() => setIsNewProjectOpen(true)}
+            title="Create a new production project"
+          >
+            <FolderPlus size={14} />
+            <span>New Project</span>
+          </button>
+        )}
+
         {/* User Profile & Persona Switcher */}
         {currentUser ? (
           <div className="role-switcher-container" ref={menuRef}>
@@ -179,6 +195,12 @@ export function TopBar() {
           </button>
         )}
       </div>
+
+      <NewProjectModal
+        isOpen={isNewProjectOpen}
+        onClose={() => setIsNewProjectOpen(false)}
+        onCreateProject={createProject}
+      />
     </header>
   );
 }
