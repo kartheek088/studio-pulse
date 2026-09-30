@@ -74,19 +74,6 @@ export function TopBar() {
       </div>
 
       <div className="topbar-right">
-        {/* User Scope Banner */}
-        {currentUser && (
-          <div className="studio-access-badge">
-            <span
-              className="user-dot-indicator"
-              style={{ background: currentUser.color || "var(--accent)" }}
-            />
-            <span className="access-scope-text">
-              <strong>{currentUser.name}</strong> · {currentUser.dept || currentUser.roleName}
-            </span>
-          </div>
-        )}
-
         {/* User Profile & Persona Switcher */}
         {currentUser ? (
           <div className="role-switcher-container" ref={menuRef}>
@@ -113,16 +100,18 @@ export function TopBar() {
               <div className="role-dropdown-menu">
                 <div className="dropdown-section">
                   <div className="dropdown-header-user">
-                    <strong style={{ color: "var(--text-bright)" }}>{currentUser.name}</strong>
-                    <span style={{ fontSize: "11px", color: "var(--text-muted)" }}>{currentUser.email}</span>
-                    <span className={`role-pill role-${currentUser.role}`} style={{ marginTop: "4px" }}>
-                      {currentUser.roleName}
-                    </span>
+                    <div className="dropdown-header-top">
+                      <strong className="dropdown-user-name">{currentUser.name}</strong>
+                      <span className={`role-pill role-${currentUser.role}`}>
+                        {currentUser.roleName}
+                      </span>
+                    </div>
+                    <span className="dropdown-user-email">{currentUser.email}</span>
                   </div>
                 </div>
 
                 <div className="dropdown-section dropdown-section-border">
-                  <span className="dropdown-section-title">SWITCH STUDIO USER (INDIVIDUAL ACCESS)</span>
+                  <span className="dropdown-section-title">Switch Active Seat</span>
                   <div className="user-switch-list">
                     {userList.map((u) => (
                       <button

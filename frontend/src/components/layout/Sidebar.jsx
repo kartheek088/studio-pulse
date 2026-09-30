@@ -155,7 +155,7 @@ export function Sidebar() {
         <div className="brand-logo">SP</div>
         <div className="brand-text">
           <h2>Studio Pulse</h2>
-          <p>Dept. of Computer Science & Design</p>
+          <p>Production Suite</p>
         </div>
 
         {/* Mobile Close Button */}

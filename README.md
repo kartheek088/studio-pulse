@@ -1,7 +1,6 @@
 # Studio Pulse 2.0
 
-> **Connected VFX & Animation Production Management Platform**  
-> *Department of Computer Science and Design*
+> **Connected VFX & Animation Production Management Platform**
 
 Studio Pulse is an end-to-end studio production tracking and collaboration suite engineered for real-time VFX, 3D animation, and virtual production workflows. It integrates linear stage pipelines, Git + Git LFS binary asset version control, real-time Unreal Engine viewport previews, and Kitsu review workflows with timecoded director annotations.
 
@@ -62,6 +61,29 @@ npm run dev:frontend
 - **Backend**: Node.js, Express, File-based Persistent Store with Seed Data
 - **Version Control System**: Git + Git LFS simulation and tracking
 - **Review System**: Kitsu REST API compatibility layer
+
+---
+
+## 🌐 Deploying to Vercel & Render
+
+### 1. Deploy Backend on Render (Web Service)
+1. Go to [Render Dashboard](https://dashboard.render.com/) and click **New +** → **Web Service**.
+2. Connect your GitHub repository: `https://github.com/kartheek088/studio-pulse.git`.
+3. Configure the settings:
+   - **Name**: `studio-pulse-api`
+   - **Root Directory**: Leave blank (or `server`)
+   - **Runtime**: `Node`
+   - **Build Command**: `npm install --prefix server` (or `npm install` if root directory is set to `server`)
+   - **Start Command**: `node server/index.js` (or `node index.js` if root directory is set to `server`)
+4. Click **Create Web Service**. Once deployed, copy your Render URL (e.g. `https://studio-pulse-api.onrender.com`).
+
+### 2. Deploy Frontend on Vercel
+1. Go to [Vercel Dashboard](https://vercel.com/) and click **Add New...** → **Project**.
+2. Import your GitHub repository: `https://github.com/kartheek088/studio-pulse.git`.
+3. In **Environment Variables**, add:
+   - **Name**: `VITE_API_URL`
+   - **Value**: Your Render URL (e.g., `https://studio-pulse-api.onrender.com`)
+4. Click **Deploy**. Vercel will build using the included `vercel.json` and deploy with full client-side routing.
 
 ---
 

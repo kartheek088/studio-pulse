@@ -193,6 +193,6 @@ app.get("/api/events", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`[Studio Pulse API] Server running on http://localhost:${PORT}`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`[Studio Pulse API] Server running on port ${PORT}`);
 });

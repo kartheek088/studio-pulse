@@ -229,7 +229,7 @@ export function ProductionProvider({ children }) {
 
         // Subscribe to live SSE events from backend
         try {
-          sse = new EventSource("/api/events");
+          sse = new EventSource(api.getEventsUrl());
           sse.onmessage = (e) => {
             try {
               const event = JSON.parse(e.data);

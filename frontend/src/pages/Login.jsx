@@ -292,7 +292,7 @@ export function Login() {
 
         {/* Understated Studio Footer */}
         <div className="login-card-footer">
-          <span>Studio Pulse 2.0 · Dept. of Computer Science & Design</span>
+          <span>Studio Pulse 2.0 · Production Suite</span>
           <span>Authorized Personnel</span>
         </div>
       </div>

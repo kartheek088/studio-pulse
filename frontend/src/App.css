@@ -22,8 +22,8 @@
   --border-accent: rgba(245, 158, 11, 0.35);
 
   /* Typography */
-  --font-display: "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
   /* High Contrast Text Palette */
@@ -615,14 +615,43 @@ select option {
   position: absolute;
   top: calc(100% + 8px);
   right: 0;
-  width: 240px;
+  min-width: 280px;
+  max-width: 320px;
   background: var(--bg-raised);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   padding: 8px;
-  box-shadow: var(--shadow-modal);
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.05);
   z-index: 1000;
   animation: fadeIn 0.15s ease;
+}
+
+.dropdown-header-user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 8px 10px;
+}
+
+.dropdown-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.dropdown-user-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-user-email {
+  font-size: 11.5px;
+  color: var(--text-secondary);
 }
 
 .dropdown-section-title {
@@ -632,7 +661,8 @@ select option {
   font-size: 10px;
   font-weight: 600;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .dropdown-item {
@@ -934,12 +964,78 @@ select option {
   margin-bottom: 20px;
 }
 
-/* Project Row Cards in Dashboard */
-.project-rows-container {
+/* Active Production Runs in Dashboard (Clean Uncongested Layout) */
+.project-card-list {
   padding: 16px 20px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.project-row:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+.project-row-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-row-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.project-row-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-row-progress {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  width: 170px;
+  flex-shrink: 0;
+}
+
+.project-row-progress .progress-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.project-row-progress .progress-val {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 36px;
+  text-align: right;
+  font-family: var(--font-mono);
 }
 
 .project-row-card {
@@ -1347,10 +1443,11 @@ select option {
   margin-bottom: 24px;
 }
 
+.project-banner-info h1,
 .project-banner-info h2 {
   font-size: 24px;
   font-weight: 700;
-  margin-bottom: 6px;
+  margin: 0 0 6px;
 }
 
 .project-banner-sub {

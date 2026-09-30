@@ -5,6 +5,7 @@
   "description": "Studio Pulse 2.0 — Production Management MVP",
   "scripts": {
     "start": "node server/index.js",
+    "build": "npm --prefix frontend run build",
     "dev:server": "node server/index.js",
     "dev:frontend": "npm --prefix frontend run dev",
     "dev": "node start-dev.js",

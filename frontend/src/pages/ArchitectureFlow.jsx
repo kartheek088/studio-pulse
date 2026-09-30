@@ -256,7 +256,7 @@ export function ArchitectureFlow() {
       {/* Page Header */}
       <div className="page-header">
         <div className="dept-banner-top">
-          <span className="dept-pill">Department of Computer Science and Design</span>
+          <span className="dept-pill">Studio Production Engine</span>
           <span className="slide-ref-pill">Slide 5 & Slide 7 Compliance</span>
         </div>
         <h1>System Architecture & Activity Flow</h1>

@@ -1,6 +1,7 @@
-// Studio Pulse — REST API Client
-
-const BASE_URL = "/api";
+const API_BASE = import.meta.env.VITE_API_URL
+  ? import.meta.env.VITE_API_URL.replace(/\/$/, "")
+  : "";
+const BASE_URL = `${API_BASE}/api`;
 
 async function request(endpoint, options = {}) {
   try {
@@ -22,6 +23,9 @@ async function request(endpoint, options = {}) {
 }
 
 export const api = {
+  // Live SSE stream endpoint
+  getEventsUrl: () => `${BASE_URL}/events`,
+
   // Check health and ping latency
   checkHealth: async () => {
     const start = performance.now();

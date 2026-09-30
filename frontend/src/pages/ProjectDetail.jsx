@@ -99,24 +99,18 @@ export function ProjectDetail() {
         </div>
       )}
 
-      <div className="page-header">
-        <div className="page-header-main">
-          <button type="button" className="back-link-btn" onClick={() => navigate("/projects")}>
-            <ArrowLeft size={14} />
-            <span>Back to Projects</span>
-          </button>
-          <h1>{project.name}</h1>
-          <p className="page-subtitle">
-            Client: <strong>{project.client}</strong> · Pipeline:{" "}
-            <strong>{workflow?.name}</strong> · Deadline: <strong>{project.deadline}</strong>
-          </p>
-        </div>
+      {/* Top Navigation */}
+      <div style={{ marginBottom: "14px" }}>
+        <button type="button" className="back-link-btn" onClick={() => navigate("/projects")} style={{ margin: 0 }}>
+          <ArrowLeft size={14} />
+          <span>Back to Projects</span>
+        </button>
       </div>
 
       {/* Project Header Banner */}
       <div className="project-detail-banner">
         <div className="project-banner-info">
-          <h2>{project.name}</h2>
+          <h1>{project.name}</h1>
           <p className="project-banner-sub">
             {project.type} Production · Directed for {project.client}
           </p>
