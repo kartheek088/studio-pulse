@@ -5,11 +5,16 @@ import { createFreshState, WORKFLOWS, ARTISTS, genId } from "./seedData.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.join(__dirname, "data");
+const isVercel = Boolean(process.env.VERCEL);
+const DATA_DIR = isVercel ? path.join("/tmp", "studio-pulse-data") : path.join(__dirname, "data");
 const STORE_PATH = path.join(DATA_DIR, "store.json");
 
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
+try {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+} catch (e) {
+  // Read-only filesystem fallback
 }
 
 class Store {
